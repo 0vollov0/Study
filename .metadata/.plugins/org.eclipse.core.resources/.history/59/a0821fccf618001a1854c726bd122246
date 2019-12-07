@@ -1,0 +1,100 @@
+package tree;
+
+public class BinaryTree {
+	private Node root;
+
+	public BinaryTree() {
+		root = null;
+	}
+
+	public Node getRoot() {
+		return root;
+	}
+
+	public void setRoot(Node root) {
+		this.root = root;
+	}
+
+	public Node find(int data) {
+		Node currentNode = root;
+
+		while (currentNode != null) {
+			if (data == currentNode.getData()) {
+				return currentNode;
+			} else if (data < currentNode.getData()) {
+				currentNode = currentNode.getLeft();
+			} else {
+				currentNode = currentNode.getRight();
+			}
+		}
+
+		return null;
+	}
+
+	public void insert(int data) {
+		Node newNode = new Node(data);
+
+		if (root == null) {
+			root = newNode;
+			return;
+		}
+
+		Node currentNode = root;
+
+		while (true) {
+			if (data < currentNode.getData()) {
+				if (currentNode.getLeft() == null) {
+					currentNode.setLeft(newNode);
+					break;
+				} else {
+					currentNode = currentNode.getLeft();
+				}
+			} else {
+				if (currentNode.getRight() == null) {
+					currentNode.setRight(newNode);
+					break;
+				} else {
+					currentNode = currentNode.getRight();
+				}
+			}
+		}
+	}
+
+	public boolean remove(int data) {
+		Node parentNode = root;
+		Node currentNode = root;
+		boolean isLeftChild = false;
+
+		while (currentNode.getData() != data) {
+			parentNode = currentNode;
+			if (currentNode.getData() > data) {
+				isLeftChild = true;
+				currentNode = currentNode.getLeft();
+			} else {
+				isLeftChild = false;
+				currentNode = currentNode.getRight();
+			}
+			if (currentNode == null) {
+				return false;
+			}
+		}
+
+		if (currentNode.getLeft() == null && currentNode.getRight() == null) {
+			if (currentNode == root) {
+				root = null;
+			}
+			if (isLeftChild) {
+				parentNode.setLeft(null);
+			}else {
+				parentNode.setRight(null);
+			}
+		} else if (currentNode.getRight() == null) {
+			if (currentNode == root) {
+				root = currentNode.getLeft();
+			}else if (isLeftChild) {
+				parentNode.setLeft(currentNode.getLeft());
+			}
+		}
+		return false;
+	}
+}

@@ -1,0 +1,46 @@
+package tree;
+
+public class BinaryTree {
+	private Node root;
+	
+	public BinaryTree() {
+		root = null;
+	}
+
+	public Node getRoot() {
+		return root;
+	}
+
+	public void setRoot(Node root) {
+		this.root = root;
+	}
+	
+	public void insert(int data) {
+		Node newNode = new Node(data);
+		
+		if (root == null) {
+			root = newNode;
+			return;
+		}
+		
+		Node currentNode = root;
+		
+		while (true) {
+			System.out.println(data);
+			if (data < currentNode.getData()) {
+				if (currentNode.getLeft() == null) {
+					currentNode.setLeft(newNode);
+					break;
+				}else {
+					currentNode = currentNode.getLeft();
+				}
+			}else {
+				if (currentNode.getRight() == null) {
+					currentNode.setRight(newNode);
+					break;
+				}
+			}
+		}
+		
+	}
+}

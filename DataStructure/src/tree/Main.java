@@ -4,21 +4,22 @@ public class Main {
 
 	public static void main(String[] args) {
 		BinaryTree binaryTree = new BinaryTree();
+		binaryTree.insert(18);
+		binaryTree.insert(7);
+		binaryTree.insert(26);
+		binaryTree.insert(3);
+		binaryTree.insert(12);
+		binaryTree.insert(31);
+		binaryTree.insert(21);
 		
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        
-        node1.setLeft(node2);
-        node1.setRight(node3);
-        node2.setLeft(node4);
-        node2.setRight(node5);
-        
-        binaryTree.setRoot(node1);
-        
-        System.out.println(binaryTree.getRoot().getLeft().getLeft().getData());
+		System.out.println(binaryTree.getRoot().getData());
+		System.out.println(binaryTree.getRoot().getRight().getData());
+		System.out.println(binaryTree.getRoot().getRight().getRight().getData());
+		System.out.println(binaryTree.getRoot().getRight().getLeft().getData());
+		
+		binaryTree.remove(18);
+		
+		System.out.println(binaryTree.getRoot().getData());
 	}
 
 }

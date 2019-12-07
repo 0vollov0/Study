@@ -7,6 +7,8 @@ public class Node {
 
 	public Node(int data) {
 		this.setData(data);
+		this.left = null;
+		this.right = null;
 	}
 
 	public int getData() {
