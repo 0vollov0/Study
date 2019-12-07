@@ -1,0 +1,12 @@
+package tree;
+
+public class Node {
+	public int number;
+	
+	public Node leftNode;
+	public Node rightNode;
+	
+	public Node(int number) {
+		this.number = number; 
+	}
+}

@@ -1,0 +1,25 @@
+package tree;
+
+public class BinaryTree {
+	private Node root;
+	
+	public BinaryTree() {
+		root = null;
+	}
+
+	public Node getRoot() {
+		return root;
+	}
+
+	public void setRoot(Node root) {
+		this.root = root;
+	}
+	
+	public void print() {
+		Node temp = root;
+		
+		while (temp != null) {
+			System.out.println(temp.getData());
+		}
+	}
+}
