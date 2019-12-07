@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="decorator.CondimentDecorator"/>
+<fullyQualifiedTypeName name="decorator.Espresso"/>
+<fullyQualifiedTypeName name="decorator.Beverage"/>
+<fullyQualifiedTypeName name="decorator.DarkRoast"/>
+<fullyQualifiedTypeName name="decorator.Mocha"/>
+<fullyQualifiedTypeName name="decorator.HouseBlend"/>
+</qualifiedTypeNameHistroy>

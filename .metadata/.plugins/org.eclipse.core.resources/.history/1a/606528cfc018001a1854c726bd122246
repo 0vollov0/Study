@@ -1,0 +1,18 @@
+package heap;
+
+public class Heap {
+	private final int MAX_ELLEMENT = 200;
+	private int[] heap;
+	
+	public Heap() {
+		heap = new int[MAX_ELLEMENT];
+	}
+	
+	public int insert(int element) {
+		return 0;
+	}
+	
+	public int remove() {
+		return 0;
+	}
+}
