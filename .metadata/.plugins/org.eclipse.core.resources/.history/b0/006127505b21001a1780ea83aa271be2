@@ -1,0 +1,21 @@
+package adapter;
+
+import java.util.Enumeration;
+import java.util.Iterator;
+
+public class EnumerationIterator implements Iterator {
+	Enumeration enumration;
+	
+	@Override
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Object next() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

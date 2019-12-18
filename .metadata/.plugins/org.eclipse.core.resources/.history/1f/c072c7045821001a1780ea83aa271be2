@@ -1,0 +1,13 @@
+package singleton;
+
+public class Main {
+
+	public static void main(String[] args) {
+		SingletonThread thread1 = new SingletonThread();
+		SingletonThread thread2 = new SingletonThread();
+		
+		thread1.start();
+		thread2.run();
+	}
+
+}

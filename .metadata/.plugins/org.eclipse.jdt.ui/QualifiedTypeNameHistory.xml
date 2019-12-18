@@ -6,4 +6,15 @@
 <fullyQualifiedTypeName name="decorator.DarkRoast"/>
 <fullyQualifiedTypeName name="decorator.Mocha"/>
 <fullyQualifiedTypeName name="decorator.HouseBlend"/>
+<fullyQualifiedTypeName name="heap.Heap"/>
+<fullyQualifiedTypeName name="tree.BinaryTree"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="singleton.SingletonThread"/>
+<fullyQualifiedTypeName name="singleton.Singleton"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.util.Enumeration"/>
+<fullyQualifiedTypeName name="adapter.Turkey"/>
+<fullyQualifiedTypeName name="adapter.WildTurkey"/>
+<fullyQualifiedTypeName name="adapter.MallardDuck"/>
+<fullyQualifiedTypeName name="adapter.TurkeyAdapter"/>
 </qualifiedTypeNameHistroy>

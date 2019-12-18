@@ -1,0 +1,19 @@
+package singleton;
+
+public class SingletonThread extends Thread {
+	public void run()
+    {
+        // 인터럽트 됬을때 예외처리
+        try
+        {
+            for(int i = 0 ; i < 10 ; i++)
+            {
+                Thread.sleep(500);
+                System.out.println("Thread : " + i);
+            }
+        }catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
+    }
+}
