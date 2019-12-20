@@ -4,7 +4,10 @@ var router = express.Router();
 var path = require('path')//상대경로
 
 router.get('/',function(req,res){
-    res.sendFile(path.join(__dirname,'../public/main.html'))
+    var email = req.user;
+    if(!email) res.render('login.ejs');
+    //res.sendFile(path.join(__dirname,'../../public/main.html'))
+    res.render('main.ejs',{'email':email});
 });
 
 module.exports = router;
