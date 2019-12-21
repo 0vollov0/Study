@@ -41,8 +41,21 @@ router.post('/join',function(req,res){
 })
 
 router.post('/login',function(req,res){
-    
-})
+    var body = req.body;
+    var mb_id = body.mb_id;
+    var mb_pw = body.mb_pw;
 
+    mb_pw = crypto.createHash('sha512').update(mb_pw).digest('hex'); 
+
+
+    var query = connection.query('SELECT * FROM member WHERE mb_id =? AND mb_pw = ?',[mb_id,mb_pw] , function (error, results, fields) {
+        var result;
+        if (error) result = { 'result' : 1 , 'message' : '로그인 실패' , 'error' : error}
+        if(results[0]) result = { 'result' : 0 , 'message' : '로그인 성공'}
+        else result = { 'result' : 2 , 'message' : '로그인 실패'}
+
+        res.json(result)
+    });
+})
 
 module.exports = router;
