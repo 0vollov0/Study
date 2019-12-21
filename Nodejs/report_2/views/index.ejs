@@ -7,7 +7,15 @@
 </head>
 <body>
     <h1>index</h1>
+    <%
+        if(mb_id != null && mb_id.length > 0){
+    %>
+    <section>환영합니다 !! <%=mb_id%> 님</section>
+    <%        
+        }
+    %>
     <a href="member/loginForm">Login</a>
     <a href="member/joinForm">Join</a>
+    <a href="member/logout">logout</a>
 </body>
 </html>

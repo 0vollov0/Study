@@ -14,15 +14,26 @@ var connection = mysql.createConnection({
 connection.connect();
 
 router.get('/joinForm',function(req,res){
+    sessionCheck(req,res);
+
     res.render('member/joinForm.ejs')
 })
 
 router.get('/loginForm',function(req,res){
+    sessionCheck(req,res);
+
     res.render('member/loginForm.ejs')
+})
+
+router.get('/logout',function(req,res){
+    req.session.destroy();
+    res.redirect('/');
 })
 
 
 router.post('/join',function(req,res){
+    sessionCheck(req,res);
+
     var body = req.body;
     var mb_id = body.mb_id;
     var mb_pw = body.mb_pw;
@@ -41,6 +52,8 @@ router.post('/join',function(req,res){
 })
 
 router.post('/login',function(req,res){
+    sessionCheck(req,res);
+
     var body = req.body;
     var mb_id = body.mb_id;
     var mb_pw = body.mb_pw;
@@ -51,11 +64,19 @@ router.post('/login',function(req,res){
     var query = connection.query('SELECT * FROM member WHERE mb_id =? AND mb_pw = ?',[mb_id,mb_pw] , function (error, results, fields) {
         var result;
         if (error) result = { 'result' : 1 , 'message' : '로그인 실패' , 'error' : error}
-        if(results[0]) result = { 'result' : 0 , 'message' : '로그인 성공'}
-        else result = { 'result' : 2 , 'message' : '로그인 실패'}
+        if(results[0]){
+            if(req.session.mb_id === undefined) req.session.mb_id = mb_id;
+            result = { 'result' : 0 , 'message' : '로그인 성공'}
+        }else{
+            result = { 'result' : 2 , 'message' : '로그인 실패'}
+        } 
 
         res.json(result)
     });
 })
+
+function sessionCheck(req,res){
+    if(req.session.mb_id  != null && req.session.mb_id.length > 0) res.redirect('/');
+}
 
 module.exports = router;
