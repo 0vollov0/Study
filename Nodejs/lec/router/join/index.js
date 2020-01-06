@@ -24,10 +24,12 @@ router.get('/',function(req,res){
 });
 
 passport.serializeUser(function(user, done) {
+    console.log('user::::'+user.email);
     done(null, user.email);
 });
 
 passport.deserializeUser(function(email, done) {
+    console.log('email::::'+email);
     done(null, email);
 });
 
@@ -37,6 +39,7 @@ passport.use('local-join',new LocalStrategy({
     passReqToCallback : true
     },
     function(req,email, password, done) {
+        console.log('req::::'+req.body);
         var query = connection.query('select * from user where email = ?',[email],function(err,rows){
             if(err) return done(err);
 
