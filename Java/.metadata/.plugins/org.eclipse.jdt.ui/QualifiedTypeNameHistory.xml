@@ -17,4 +17,9 @@
 <fullyQualifiedTypeName name="adapter.WildTurkey"/>
 <fullyQualifiedTypeName name="adapter.MallardDuck"/>
 <fullyQualifiedTypeName name="adapter.TurkeyAdapter"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="graph.Node"/>
+<fullyQualifiedTypeName name="graph.Graph"/>
 </qualifiedTypeNameHistroy>

@@ -1,7 +1,0 @@
-package adapter;
-
-import java.util.Iterator;
-
-public class EnumerationIterator implements Iterator<E> {
-
-}
