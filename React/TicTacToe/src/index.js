@@ -6,6 +6,14 @@ import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 
+function Square(props){
+    return (
+    <button className="square" onClick={props.onClick}>
+        {props.value}
+    </button>
+    );
+}
+
 class Board extends React.Component{
     renderSquare(i){
         return <Square value={this.props.squares[i]} onClick={()=>this.props.onClick(i)} />;
@@ -34,14 +42,6 @@ class Board extends React.Component{
     }
 }
 
-function Square(props){
-    return (
-    <button className="square" onClick={props.onClick}>
-        {props.value}
-    </button>
-    );
-}
-
 // class Square extends React.Component{
 //     render(){
 //         return (
@@ -59,12 +59,13 @@ class Game extends React.Component{
             history : [{
                 squares : Array(9).fill(null),
             }],
+            stepNumber : 0,
             xIsNext : true,
         };
     }
 
     handleClick(i){
-        const history = this.state.history;
+        const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length-1];
         const squares = current.squares.slice();
 
@@ -76,14 +77,31 @@ class Game extends React.Component{
             history : history.concat([{
                 squares : squares,
             }]),
+            stepNumber : history.length,
             xIsNext : !this.state.xIsNext,
         });
     }
 
+    jumpTo(step){
+        this.setState({
+            stepNumber : step,
+            xIsNext : (step%2) === 0,
+        })
+    }
+
     render(){
         const history = this.state.history;
-        const current = history[history.length-1];
+        const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
+
+        const moves = history.map((step,move)=>{
+            const desc = move ? 'Go to move #' + move : 'Go to game start';
+            return (
+                <li key={move}>
+                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                </li>
+            );
+        });
         
         let status;
         if (winner) {
@@ -99,7 +117,7 @@ class Game extends React.Component{
                 </div>
                 <div  className="game-info">
                     <div>{status}</div>
-                    <div>{/* TODO */}</div>
+                    <ol>{moves}</ol>
                 </div>
             </div>
         )
