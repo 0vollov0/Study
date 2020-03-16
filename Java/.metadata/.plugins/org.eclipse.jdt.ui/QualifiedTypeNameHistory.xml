@@ -17,9 +17,22 @@
 <fullyQualifiedTypeName name="adapter.WildTurkey"/>
 <fullyQualifiedTypeName name="adapter.MallardDuck"/>
 <fullyQualifiedTypeName name="adapter.TurkeyAdapter"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="graph.Node"/>
 <fullyQualifiedTypeName name="graph.Graph"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="test.RequiredConvertInfo"/>
+<fullyQualifiedTypeName name="org.locationtech.jts.geom.Geometry"/>
+<fullyQualifiedTypeName name="org.locationtech.jts.io.WKTReader"/>
+<fullyQualifiedTypeName name="dijkstra.Vertex"/>
+<fullyQualifiedTypeName name="dijkstra.Edge"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="GmlParsing.MultiLayeredGraph.State"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="dijkstra.Dijkstra"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.util.JSONPObject"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
 </qualifiedTypeNameHistroy>
